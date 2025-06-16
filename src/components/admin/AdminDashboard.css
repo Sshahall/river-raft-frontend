@@ -1,0 +1,130 @@
+html, * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.admin-dashboard {
+  height: 100vh;
+  padding: 60px 20px 40px;
+  
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  width: 80vw;
+  border-radius: 20px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h2 {
+  color: #0057b8;
+  font-size: 30px;
+}
+
+.dashboard-header button {
+  
+  color: rgb(255, 0, 0);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  background-color: white;
+}
+
+.dashboard-header button:hover {
+  background-color: #ffffff;
+  color: rgb(165, 16, 16);
+}
+
+.booking-status {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+  font-size: 16px;
+  color: #003366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.booking-status input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0077cc;
+  margin-right: 10px;
+  
+}
+
+.tab-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.tab-buttons button {
+  padding: 16px;
+  font-size: 16px;
+  background-color: #015896;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 119, 204, 0.15);
+}
+
+.tab-buttons button:hover {
+  background-color: #005fa3;
+  transform: scale(1.02);
+}
+
+@media screen and (max-width: 600px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .dashboard-header h2 {
+    font-size: 24px;
+  }
+
+  .dashboard-header button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .booking-status {
+    font-size: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tab-buttons button {
+    font-size: 15px;
+    padding: 14px;
+  }
+}

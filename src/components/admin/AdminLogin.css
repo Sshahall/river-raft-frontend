@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  
+}
+.admin-login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Use vh instead of vw */
+  background: linear-gradient(135deg, #e0f2ff, #ffffff);
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.admin-login-box {
+  background-color: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 80vw;
+  max-width: 1000px;
+  text-align: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.admin-login-box h2 {
+  color: #0077cc;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.admin-login-box input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.admin-login-box input:focus {
+  border-color: #0077cc;
+}
+
+.admin-login-box button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-login-box button:hover {
+  background-color: #005fa3;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+  .admin-login-box {
+    padding: 30px 20px;
+    max-width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .admin-login-box {
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  }
+
+  .admin-login-box h2 {
+    font-size: 20px;
+  }
+}

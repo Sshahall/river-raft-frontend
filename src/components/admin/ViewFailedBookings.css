@@ -1,0 +1,106 @@
+html,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.failed-bookings-page {
+  padding: 30px 20px;
+  min-height: 100vh;
+  color: #002244;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  
+  margin-top: 120px;
+}
+
+.failed-bookings-page h2 {
+  color: #cc0000;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  width: 100%;
+}
+
+.export-button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.export-button:hover {
+  background-color: #005fa3;
+}
+
+.table-wrapper {
+  width: 100%;
+  max-width: 1000px;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+table th,
+table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+}
+
+table th {
+  background-color: #0077cc;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+table tr:hover {
+  background-color: #f0f8ff;
+}
+
+@media screen and (max-width: 768px) {
+  .failed-bookings-page {
+    width: 80vw;
+  }
+
+  .export-button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .table-wrapper {
+    width: 100%;
+  }
+
+  table {
+    font-size: 13px;
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    padding: 10px;
+  }
+
+  .failed-bookings-page h2 {
+    font-size: 20px;
+  }
+}
