@@ -7,13 +7,15 @@ const ViewFailedBookings = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     checkAdminAndFetch();
   }, []);
 
   const checkAdminAndFetch = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin-auth/check", {
+      const res = await fetch(`${API_BASE}/api/admin-auth/check`, {
         credentials: "include",
       });
       const result = await res.json();
@@ -32,7 +34,7 @@ const ViewFailedBookings = () => {
 
   const fetchFailedBookings = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/failed-bookings", {
+      const res = await fetch(`${API_BASE}/api/admin/failed-bookings`, {
         credentials: "include",
       });
       const data = await res.json();

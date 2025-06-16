@@ -6,6 +6,7 @@ const ViewAllBookings = () => {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
 
   useEffect(() => {
     checkAdminAndFetch();
@@ -13,7 +14,7 @@ const ViewAllBookings = () => {
 
   const checkAdminAndFetch = async () => {
     try {
-      const check = await fetch("http://localhost:5000/api/admin-auth/check", {
+      const check = await fetch(`${API_BASE}/api/admin-auth/check`, {
         credentials: "include"
       });
 
@@ -32,7 +33,7 @@ const ViewAllBookings = () => {
 
   const fetchAllBookings = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/all", {
+      const res = await fetch(`${API_BASE}/api/admin/all`, {
         credentials: "include"
       });
       const data = await res.json();

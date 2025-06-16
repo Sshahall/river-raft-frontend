@@ -41,7 +41,7 @@ const BookingConfirm = () => {
     setCheckingSeats(true);
 
     try {
-      const res = await fetch(`http://localhost:5000/api/bookings/slots?date=${date}`);
+      const res = await fetch(`https://river-raft-backend.onrender.com/api/bookings/slots?date=${date}`);
       const data = await res.json();
       const timeSlots = data[time] || [];
 
@@ -80,7 +80,7 @@ const BookingConfirm = () => {
                 paymentId: response.razorpay_payment_id,
               };
 
-              const bookingRes = await fetch("http://localhost:5000/api/bookings", {
+              const bookingRes = await fetch("https://river-raft-backend.onrender.com/api/bookings", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),

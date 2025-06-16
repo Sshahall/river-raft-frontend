@@ -7,11 +7,12 @@ const AdminDashboard = () => {
   const [disabled, setDisabled] = useState(false);
   const [loadingStatus, setLoadingStatus] = useState(true);
 
-  // Admin authentication check
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const validateAdmin = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/admin-auth/check", {
+        const res = await fetch(`${API_BASE}/api/admin-auth/check`, {
           method: "GET",
           credentials: "include",
         });
@@ -27,7 +28,7 @@ const AdminDashboard = () => {
 
     const fetchDisabledStatus = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/admin/booking-status", {
+        const res = await fetch(`${API_BASE}/api/admin/booking-status`, {
           credentials: "include",
         });
         const data = await res.json();
@@ -45,17 +46,16 @@ const AdminDashboard = () => {
 
     validateAdmin();
     fetchDisabledStatus();
-  }, [navigate]);
+  }, [navigate, API_BASE]);
 
-  // Toggle booking on/off
   const toggleBooking = async () => {
     const newStatus = !disabled;
 
     try {
-      const res = await fetch("http://localhost:5000/api/admin/booking-status", {
+      const res = await fetch(`${API_BASE}/api/admin/booking-status`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        credentials: "include", // ✅ Important: send admin cookie
+        credentials: "include",
         body: JSON.stringify({ disabled: newStatus }),
       });
 
@@ -71,10 +71,9 @@ const AdminDashboard = () => {
     }
   };
 
-  // Logout
   const handleLogout = async () => {
     try {
-      await fetch("http://localhost:5000/api/admin-auth/logout", {
+      await fetch(`${API_BASE}/api/admin-auth/logout`, {
         method: "POST",
         credentials: "include",
       });

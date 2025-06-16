@@ -7,13 +7,15 @@ const ViewTomorrowBookings = () => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     checkAdminAndFetch();
   }, []);
 
   const checkAdminAndFetch = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin-auth/check", {
+      const res = await fetch(`${API_BASE}/api/admin-auth/check`, {
         credentials: "include"
       });
       const result = await res.json();
@@ -32,7 +34,7 @@ const ViewTomorrowBookings = () => {
 
   const fetchTomorrowBookings = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/tomorrow", {
+      const res = await fetch(`${API_BASE}/api/admin/tomorrow`, {
         credentials: "include"
       });
       const data = await res.json();

@@ -18,11 +18,12 @@ const BookingForm = () => {
   const [errors, setErrors] = useState('');
   const [bookingDisabled, setBookingDisabled] = useState(false);
 
+  const API_BASE = process.env.REACT_APP_API_BASE_URL;
+
   // Fetch admin booking status
   const fetchBookingStatus = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/admin/public-booking-status");
-
+      const res = await fetch(`${API_BASE}/api/admin/public-booking-status`);
       const data = await res.json();
       setBookingDisabled(data.disabled || false);
     } catch (err) {
@@ -52,7 +53,7 @@ const BookingForm = () => {
   // Fetch slot availability for selected date
   const fetchSlots = async (selectedDate) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/bookings/slots?date=${selectedDate}`);
+      const res = await fetch(`${API_BASE}/api/bookings/slots?date=${selectedDate}`);
       const data = await res.json();
       setAvailableSlots(data || {});
     } catch (err) {
